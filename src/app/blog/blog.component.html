@@ -1,0 +1,14 @@
+<button (click)="filtrarHumor()" class="btn btn-outline-secondary ml-2 mt-2">Humor</button>
+<button (click)="filtrarCoding()" class="btn btn-outline-secondary ml-2 mt-2">Coding</button>
+<div class="card mt-2 mb-2 p-3" *ngFor="let p of arrayPosteos">
+  <img [src]="p.imagen" class="card-img-top" max-width="100%" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{p.titulo}}</h4>
+    <h6 class="card-title">Autor: {{p.autor}}</h6>
+    <p class="card-text">{{p.texto}}</p>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">{{p.fecha | date:short}} <strong> / Categoria:</strong> {{p.categoria}}</small>
+  </div>
+</div>
+<button [routerLink]="['/new']" class="btn btn-outline-secondary btn-block mb-3">Nuevo post</button>
